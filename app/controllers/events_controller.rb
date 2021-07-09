@@ -3,7 +3,6 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-
     @events = Event.all
   end
 
@@ -14,7 +13,8 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     helpers.signed_in_only
-    @event = Event.new
+    #@event = Event.new
+    @event= current_user.events.build
   end
   # GET /events/1/edit
   def edit
@@ -23,7 +23,7 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     helpers.signed_in_only
-   @event =  Event.new(event_params)
+    @event= current_user.events.build(event_params)
    
 
 

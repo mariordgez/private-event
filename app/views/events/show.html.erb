@@ -15,6 +15,21 @@
   <%= @event.date %>
 </p>
 
+<h2>Comments</h2>
+<% @event.attendees.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.userame %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.user_id %>
+  </p>
+
+  <%= link_to 'Destroy', [comment.event_id, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
 <h2>Add a comment:</h2>

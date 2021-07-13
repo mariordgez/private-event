@@ -16,31 +16,29 @@
 </p>
 
 <h2>Comments</h2>
-<% @event.attendees.each do |comment| %>
+<% @event.attendees.each do |attendee| %>
   <p>
     <strong>Commenter:</strong>
-    <%= comment.userame %>
+    <%= attendee.userame %>
   </p>
 
   <p>
     <strong>Comment:</strong>
-    <%= comment.user_id %>
+    <%= attendee.user_id %>
   </p>
 
-  <%= link_to 'Destroy', [comment.event_id, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
-<h2>Add a comment:</h2>
 <%= form_with model: [ @event, @event.attendees.build ] do |form| %>
   <p>
-    <%= form.text_field :userame, value: current_user.email %>
+    <%= form.text_field :userame, value: current_user.email, type: :hidden %>
   </p>
   <p>
-    <%= form.text_area :user_id, value: current_user.id %>
+    <%= form.text_field :user_id, value: current_user.id, type: :hidden %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit "Attend event" %>
   </p>
 <% end %>

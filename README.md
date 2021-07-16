@@ -11,6 +11,8 @@ The project checks and requires for a user to sign-in to create events, it creat
 - Ruby on Rails
 - Devise
 - Active record
+- Rspec
+- Capybara
 
 ## Linters
 
@@ -27,6 +29,8 @@ Follow the steps below to get a local copy running:
   - For Windows users, visit [Ruby Installer](https://rubyinstaller.org/)
   - For MocOS and Linux users, visit the [Ruby Official Site](https://www.ruby-lang.org/en/downloads/) for instructions.
 - Then clone the project by by typing `git clone https://github.com/angelacuahutle/Members_Only_App.git`.
+- Install Node.js to have access to the npm Package manager and easily install Yarn, visit https://nodejs.org/en/ to download it,
+- After successfully installing npm, you can run npm install --global yarn to install Yarn so that packages can be installed related to browser functionality.
 
 ### Run App
 
@@ -41,8 +45,6 @@ Follow the steps below to get a local copy running:
 - GitHub: [@mariordgez](https://github.com/mariordgez)
 - Twitter: [@MarioRo75396624](https://twitter.com/MarioRo75396624)
 - LinkedIn: [Mario](https://www.linkedin.com/in/mario-alberto-rodriguez-cota-a2860a205/)
-
-
 
 ## 🤝 Contributing
 

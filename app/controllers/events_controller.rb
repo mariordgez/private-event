@@ -13,9 +13,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     helpers.signed_in_only
-    @event = current_user.events.build if user_signed_in? do 
-    
-  end    
+    @event = current_user.events.build if user_signed_in?
   end
 
   # GET /events/1/edit

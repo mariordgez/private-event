@@ -28,6 +28,7 @@
   </tbody>
 </table>
 <h1>Attended events</h1>
+<h2></h2>
 
 <table>
   <thead>
@@ -41,12 +42,14 @@
 
   <tbody>
     <% current_user.attendees.each do |attendee| %>
-      <% @event= Event.where("id = ?", attendee.event_id ) %>
+      <% @event= Event.where("id = ?", attendee.event_id) %>
+      <% if @event.first.date < Time.now %>
       <tr>
         <td><%= @event.first.title %></td>
-       
-
+        <td><%= @event.first.description %></td>
+        <td><%= @event.first.date %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

@@ -1,7 +1,6 @@
 class AttendeesController < ApplicationController
   def new
     helpers.signed_in_only
-    # @event = Event.new
     @attendee = @event.attendees.build
   end
 

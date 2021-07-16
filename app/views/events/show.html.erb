@@ -15,16 +15,10 @@
   <%= @event.date %>
 </p>
 
-<h2>Comments</h2>
+<h2>Attendees</h2>
 <% @event.attendees.each do |attendee| %>
   <p>
-    <strong>Commenter:</strong>
-    <%= attendee.userame %>
-  </p>
-
-  <p>
-    <strong>Comment:</strong>
-    <%= attendee.user_id %>
+    <strong><%= attendee.userame %></strong>
   </p>
 
 <% end %>

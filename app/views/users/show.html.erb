@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
+    <% current_user.events.each do |event| %>
       <tr>
         <td><%= event.title %></td>
         <td><%= event.description %></td>
@@ -27,9 +27,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
-<%= link_to 'User events', current_user  %>
-<%=  sign_in_out %>
+<%= link_to 'Back', events_path %>

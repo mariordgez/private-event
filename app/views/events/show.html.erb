@@ -15,5 +15,24 @@
   <%= @event.date %>
 </p>
 
+<h2>Attendees</h2>
+<% @event.attendees.each do |attendee| %>
+  <p>
+    <strong><%= attendee.userame %></strong>
+  </p>
+
+<% end %>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+<%= form_with model: [ @event, @event.attendees.build ] do |form| %>
+  <p>
+    <%= form.text_field :userame, value: current_user.email, type: :hidden %>
+  </p>
+  <p>
+    <%= form.text_field :user_id, value: current_user.id, type: :hidden %>
+  </p>
+  <p>
+    <%= form.submit "Attend event" %>
+  </p>
+<% end %>
